@@ -4,6 +4,8 @@
  ******************************************************************/
 const fs = require("fs");
 const dir = __dirname;
+const dotenv = require("dotenv");
+dotenv.config(); // setup dotenv
 
 // adds a rarity to the configuration. This is expected to correspond with a directory containing the rarity for each defined layer
 // @param _id - id of the rarity
@@ -121,9 +123,9 @@ const width = 1000;
 // image height in pixels
 const height = 1000;
 // description for NFT in metadata file
-const description = "Moralis Mutants - Survivors of Rekt City";
+const description = process.env.APP_DESCRIPTION;
 // base url in case no unique metadata file i.e IPFS
-const baseImageUri = "YOUR_MORALIS_SERVER_URL";
+const baseImageUri = process.env.SERVER_URL;
 // id for edition to start from
 const startEditionFrom = 1;
 // amount of NFTs to generate in edition

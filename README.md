@@ -4,57 +4,70 @@
 
 ## About
 
-Aim: Save time and resources for artists and developers by allowing them to generate and host NFT art, across blockchains, in one place (utilising Moralis).
+Aim: Save time and resources for artists and developers by allowing them to
+generate and host NFT art, across blockchains, in one place (utilizing Moralis).
 
-These tutorial videos are a great introduction.
-Part 1: [Link to Moralis YouTube Video](https://youtu.be/KBV4FrCv4ps)
-Part 2: [Link to Moralis YouTube Video](https://youtu.be/FcH7qXnOgzs)
+### These tutorial videos are a great introduction.
+
+- Part 1: [Link to Moralis YouTube Video](https://youtu.be/KBV4FrCv4ps)
+- Part 2: [Link to Moralis YouTube Video](https://youtu.be/FcH7qXnOgzs)
 
 ## Quick Launch 🚀
 
-Via terminal, navigate to root directory:
+1. Via terminal, navigate to root directory:
 
-```sh
-npm install
+   ```sh
+   npm install
+   ```
 
-```
+2. Go to [Moralis.io](https://moralis.io/) to create your server instance.
 
-Go to [Moralis.io](https://moralis.io/) to create your server instance. Then rename .env-example file to .env and add your Moralis server credentials.
+   **NOTE:** I recommend creating a `Testnet` server instance if this is for
+   local test purposes, and then creating a `Mainnet` server instance once
+   you're ready for public/production purposes.
 
-_Note_: To find your xAPI key: https://deep-index.moralis.io/api-docs/#/storage/uploadFolder
+3. Duplicate file `.env-example` to `.env` and add your Moralis server
+   credentials _(available from previous step)_.
 
-Create your layered artwork and split into folders in `./input` and configure your collection to match your layer structure and preferences accordingly by editing `./input/config.js`:
+   **Note:** To find your xAPI key: https://deep-index.moralis.io/api-docs/#/storage/uploadFolder
 
-Finally, via terminal in the project directory run:
+4. Create your layered artwork in Adobe Photoshop _(or other)_ and split into
+   folders in `./input/**` and configure your collection to match your layer
+   structure and preferences accordingly by editing `./input/config.js`.
 
-```sh
-node index.js
+5. Finally, via terminal in the project directory run:
 
-```
+   ```sh
+   npm run generate
+   ```
 
-This injects the mutagen that will bring your Moralis mutants ALIVE!
+   This injects the mutagen that will bring your Moralis mutants **ALIVE!**
 
 ## Minting ⛓
 
-Copy Solidity contract to [⚙️ Remix IDE](https://remix.ethereum.org/) for test and deplyment, but first edit code to point to your meta data's IPFS folder 'metahash/CID'. You can get this, saved in dasboard of your Moralis server instance in row of 'metahash' column.
+Copy Solidity contract to [⚙️ Remix IDE](https://remix.ethereum.org/) for test
+and deployment, but first edit code to point to your meta data's IPFS folder
+`'metahash/CID'`. You can get this, saved in dashboard of your Moralis server
+instance in row of `'metahash'` column:
 
-```sh
-constructor()
-    ERC1155(
-        "ipfs://INSERT_YOUR_CID_METAHASH/metadata/{id}.json"
-    )
-{
+```javascript
+    // ...commented out for brevity...
+    constructor()
+        ERC1155(
+            "ipfs://INSERT_YOUR_CID_METAHASH/metadata/{id}.json"
+        )
+    {
+        // ...commented out for brevity...
 ```
 
 ## Dependencies 🏗
 
-`moralis`: [ℹ️ Docs](https://docs.moralis.io/)
+- `moralis`: [ℹ️ Docs](https://docs.moralis.io/)
+- `canvas`: [ℹ️ Docs](https://www.npmjs.com/package/canvas)
 
-`canvas`: [ℹ️ Docs](https://www.npmjs.com/package/canvas)
+## TODOs ✅
 
-## Todos ✅
-
-- [x] NFT contract allowing tokens to be minted and tranferred for Opensea.
+- [x] NFT contract allowing tokens to be minted and transferred for Opensea.
 - [ ] Users can mint NFT collection via custom dapp frontend.
 - [ ] Compatibility across-chains (SOL/MATIC).
 - [ ] Much more TBA.

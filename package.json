@@ -1,9 +1,10 @@
 {
-  "name": "art_generator",
-  "version": "1.0.0",
-  "description": "",
+  "name": "moralis_nft_art_generator_engine",
+  "version": "1.0.1",
+  "description": "Saves time and resources for artists and developers by generating and hosting NFT art, across blockchains, in one place (utilizing Moralis).",
   "main": "index.js",
   "scripts": {
+    "generate": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Eugene Botha",
